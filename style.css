@@ -1,5 +1,5 @@
 /* =============================
-   BOC Premium Styles
+   BOC Stable Premium Styles
    Palette: Royal Blue #2563EB, Neon Cyan #22D3EE, Dark #111827, Light #F9FAFB
    Font: Inter
    ============================= */
@@ -92,7 +92,7 @@ body{
 /* Buttons */
 .btn{display:inline-flex; align-items:center; gap:10px; text-decoration:none; font-weight:700;
   padding:.9rem 1.2rem; border-radius:10px; transition:transform .2s ease, box-shadow .2s ease, background .2s ease}
-.btn .icon{width:18px; height:18px}
+.icon{width:18px; height:18px; fill:currentColor; display:inline-block}
 .btn-primary{background:var(--blue); color:#fff; box-shadow:0 10px 20px rgba(37,99,235,.25)}
 .btn-primary:hover{background:var(--blue-dark); transform:translateY(-2px)}
 .btn-secondary{background:var(--cyan); color:#0b1220; box-shadow:0 10px 20px rgba(34,211,238,.25)}
@@ -110,14 +110,14 @@ body{
 /* Services */
 .services .cards{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:22px; margin-top:22px}
 .card{background:#0b1220; border:1px solid rgba(255,255,255,.06); border-radius:var(--radius);
-  padding:24px; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease}
+  padding:24px; box-shadow:var(--shadow); transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease; position:relative; overflow:hidden}
 .card:hover{transform:translateY(-6px); box-shadow:0 16px 40px rgba(37,99,235,.35); border-color:rgba(34,211,238,.35)}
 .card h3{margin:12px 0 8px}
 .card p{margin:0; color:#cbd5e1}
-.card-icon{width:36px; height:36px; filter:drop-shadow(0 0 10px rgba(34,211,238,.5))}
+.card-badge{position:absolute; top:12px; right:16px; font-weight:800; color:rgba(34,211,238,.6)}
 
 /* Why bullets */
-.bullets{display:grid; gap:10px; margin:18px 0 0; color:#111827}
+.bullets{display:grid; gap:10px; margin:18px 0 0; color:#111827; padding-left:0; list-style:none}
 .light-section .bullets li{background:#fff; border:1px solid #e5e7eb; padding:12px 14px; border-radius:12px}
 
 /* CTA */
@@ -126,9 +126,10 @@ body{
 
 /* Footer */
 .footer-inner{display:grid; grid-template-columns:1fr auto; align-items:center; gap:18px; padding:26px 0}
-.footer-links a{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px;
-  border-radius:10px; background:#0b1220; border:1px solid rgba(255,255,255,.08); margin-left:10px}
-.footer-links a:hover{border-color:rgba(34,211,238,.45); box-shadow:var(--glow)}
+.footer-links{display:flex; gap:10px}
+.footer-links .social{display:inline-flex; align-items:center; justify-content:center; width:38px; height:38px;
+  border-radius:10px; background:#0b1220; border:1px solid rgba(255,255,255,.08);}
+.footer-links .social:hover{border-color:rgba(34,211,238,.45); box-shadow:var(--glow)}
 .copy{grid-column:1/-1; color:#9ca3af; font-size:.9rem}
 
 /* Reveal Animations */

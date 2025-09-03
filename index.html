@@ -13,21 +13,21 @@
 </head>
 <body>
   <!-- Preloader -->
-  <div id="preloader">
+  <div id="preloader" aria-hidden="true">
     <div class="logo-wrapper">
       <span class="logo neon pulse flicker">BOC</span>
-      <div class="loader-ring"></div>
+      <div class="loader-ring" role="progressbar" aria-label="Loading"></div>
     </div>
   </div>
 
   <!-- Navbar -->
-  <nav class="navbar">
+  <nav class="navbar" role="navigation" aria-label="Main">
     <div class="container nav-inner">
       <div class="brand">
-        <a href="#home" class="logo neon">BOC</a>
+        <a href="#home" class="logo neon" aria-label="BOC home">BOC</a>
         <span class="tagline">Build On Crypto</span>
       </div>
-      <button class="hamburger" aria-label="Menu">
+      <button class="hamburger" aria-label="Open menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links">
@@ -48,11 +48,19 @@
       <h1 class="reveal">Build On Crypto</h1>
       <p class="reveal delay-1">We help Web3 projects grow from <strong>idea → exchange</strong>.</p>
       <div class="cta reveal delay-2">
-        <a href="https://t.me/Buildoncrypt" target="_blank" class="btn btn-primary">
-          <img src="./assets/telegram.svg" alt="" class="icon" /> Join Telegram
+        <a href="https://t.me/Buildoncrypt" target="_blank" rel="noopener noreferrer" class="btn btn-primary">
+          <!-- Telegram inline SVG -->
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.03 15.47 8.9 19.6c.3 0 .43-.13.59-.29l2.83-2.72 5.86 4.29c1.08.6 1.85.29 2.15-1.01L23.88 4.9c.35-1.66-.6-2.31-1.66-1.91L1.74 11.05c-1.62.63-1.59 1.53-.28 1.94l5.61 1.75 12.99-7.9c.61-.37 1.17-.17.71.24"/>
+          </svg>
+          Join Telegram
         </a>
-        <a href="https://x.com/buildoncrypto" target="_blank" class="btn btn-secondary">
-          <img src="./assets/x.svg" alt="" class="icon" /> Follow on X
+        <a href="https://x.com/buildoncrypto" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+          <!-- X inline SVG -->
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.244 2H21l-6.45 7.373L22 22h-6.806l-4.74-6.2L4.9 22H2.143l6.905-7.9L2 2h6.9l4.287 5.72L18.244 2Zm-1.19 18.2h1.89L7.04 3.71H5.042l12.01 16.49Z"/>
+          </svg>
+          Follow on X
         </a>
       </div>
     </div>
@@ -75,22 +83,22 @@
       <h2 class="section-title reveal">What We Do</h2>
       <div class="cards">
         <article class="card reveal delay-1">
-          <img src="./assets/service1.svg" alt="" class="card-icon" />
+          <div class="card-badge">01</div>
           <h3>Project Development & Advisory</h3>
           <p>From concept to execution, we refine your vision into a strong market‑ready product.</p>
         </article>
         <article class="card reveal delay-2">
-          <img src="./assets/service2.svg" alt="" class="card-icon" />
+          <div class="card-badge">02</div>
           <h3>Exchange Approvals</h3>
           <p>Guidance for listings on MEXC, Gate, KuCoin, and other leading exchanges.</p>
         </article>
         <article class="card reveal delay-3">
-          <img src="./assets/service3.svg" alt="" class="card-icon" />
+          <div class="card-badge">03</div>
           <h3>Community Growth</h3>
           <p>Campaigns, moderation, and tailored engagement strategies to build true believers.</p>
         </article>
         <article class="card reveal delay-4">
-          <img src="./assets/service4.svg" alt="" class="card-icon" />
+          <div class="card-badge">04</div>
           <h3>Advisory & Networking</h3>
           <p>Leverage connections to reach investors, advisors, and key ecosystem partners.</p>
         </article>
@@ -118,8 +126,12 @@
   <section id="contact" class="cta dark-section">
     <div class="container cta-inner reveal">
       <h2>Let’s build the next big thing together.</h2>
-      <a href="https://t.me/Buildoncrypt" target="_blank" class="btn btn-accent">
-        <img src="./assets/telegram.svg" alt="" class="icon" /> Contact on Telegram
+      <a href="https://t.me/Buildoncrypt" target="_blank" rel="noopener noreferrer" class="btn btn-accent">
+        <!-- Telegram inline SVG -->
+        <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M9.03 15.47 8.9 19.6c.3 0 .43-.13.59-.29l2.83-2.72 5.86 4.29c1.08.6 1.85.29 2.15-1.01L23.88 4.9c.35-1.66-.6-2.31-1.66-1.91L1.74 11.05c-1.62.63-1.59 1.53-.28 1.94l5.61 1.75 12.99-7.9c.61-.37 1.17-.17.71.24"/>
+        </svg>
+        Contact on Telegram
       </a>
     </div>
   </section>
@@ -132,11 +144,15 @@
         <span>Build On Crypto</span>
       </div>
       <div class="footer-links">
-        <a href="https://t.me/Buildoncrypt" target="_blank" aria-label="Telegram">
-          <img src="./assets/telegram.svg" class="icon" alt="Telegram" />
+        <a href="https://t.me/Buildoncrypt" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="social">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M9.03 15.47 8.9 19.6c.3 0 .43-.13.59-.29l2.83-2.72 5.86 4.29c1.08.6 1.85.29 2.15-1.01L23.88 4.9c.35-1.66-.6-2.31-1.66-1.91L1.74 11.05c-1.62.63-1.59 1.53-.28 1.94l5.61 1.75 12.99-7.9c.61-.37 1.17-.17.71.24"/>
+          </svg>
         </a>
-        <a href="https://x.com/buildoncrypto" target="_blank" aria-label="X (Twitter)">
-          <img src="./assets/x.svg" class="icon" alt="X" />
+        <a href="https://x.com/buildoncrypto" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)" class="social">
+          <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.244 2H21l-6.45 7.373L22 22h-6.806l-4.74-6.2L4.9 22H2.143l6.905-7.9L2 2h6.9l4.287 5.72L18.244 2Zm-1.19 18.2h1.89L7.04 3.71H5.042l12.01 16.49Z"/>
+          </svg>
         </a>
       </div>
       <p class="copy">© 2025 BOC — Build On Crypto. All rights reserved.</p>
