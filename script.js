@@ -152,3 +152,25 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => { resize(); initParticles(); });
   }
 });
+async function loadAgents() {
+  const response = await fetch("agents.json");
+  const data = await response.json();
+  return data.verifiedAgents;
+}
+
+async function verifyAgent() {
+  const input = document.getElementById("usernameInput").value.trim().replace(/^@/, "");
+  const result = document.getElementById("verificationResult");
+  const verifiedAgents = await loadAgents();
+
+  // Normalize (remove @ from both sides for comparison)
+  const normalizedAgents = verifiedAgents.map(a => a.replace(/^@/, ""));
+  
+  if (normalizedAgents.includes(input)) {
+    result.textContent = "✅ Verified: This is an official BOC partner agent.";
+    result.style.color = "green";
+  } else {
+    result.textContent = "❌ Not Verified: This username is not in our partner list.";
+    result.style.color = "red";
+  }
+}
