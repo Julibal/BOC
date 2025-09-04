@@ -147,3 +147,139 @@ body{
   .nav-links.open{display:flex}
   .hamburger{display:block}
 }
+
+
+/* Verify Page Styling */
+.verify-page {
+  background: #0f0f0f;
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.verify-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 20px;
+}
+.verify-card {
+  background: rgba(20,20,20,0.8);
+  border: 1px solid #0ff;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 450px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,255,255,0.3);
+  backdrop-filter: blur(8px);
+  animation: fadeIn 1.5s ease-in-out;
+}
+.verify-form {
+  margin: 20px 0;
+}
+.verify-card .input {
+  width: 80%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #0ff;
+  margin-bottom: 15px;
+}
+.btn-verify {
+  background: #0ff;
+  color: #000;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.3s;
+}
+.btn-verify:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 12px #0ff;
+}
+.verify-result {
+  margin-top: 15px;
+  font-size: 1.1em;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out;
+}
+.verify-result.show {
+  opacity: 1;
+}
+.note {
+  font-size: 0.85em;
+  color: #ccc;
+  margin-top: 10px;
+}
+
+
+/* Extra Stylish Verify Button on homepage */
+.btn-verify {
+  background: linear-gradient(90deg, #0ff, #00ccaa);
+  color: #000;
+  font-weight: bold;
+  border-radius: 8px;
+  padding: 12px 26px;
+  margin-top: 12px;
+  display: inline-block;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+.btn-verify:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,200,0.7);
+}
+
+
+/* Ensure Verify Agent button in hero looks distinct */
+.hero .btn-verify {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #0ff, #00ccaa);
+  color: #000;
+  font-weight: bold;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+.hero .btn-verify:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,200,0.7);
+}
+
+
+/* Verify Agent button in hero CTA */
+.btn-verify {
+  display: inline-block;
+  margin-top: 15px;
+  background: linear-gradient(135deg, #0ff, #00ccaa);
+  color: #000;
+  font-weight: bold;
+  padding: 12px 28px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+.btn-verify:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0,255,200,0.7);
+}
+
+
+/* Verify Agent button in navbar */
+nav .btn-verify {
+  margin-left: 15px;
+  background: linear-gradient(135deg, #0ff, #00ccaa);
+  color: #000 !important;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: transform 0.25s ease, box-shadow 0.3s ease;
+}
+nav .btn-verify:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px rgba(0,255,200,0.7);
+}

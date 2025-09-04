@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Verify Agent - BOC</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+</head>
+<body class="verify-page">
+  <div id="particles-js"></div>
+  <div class="verify-wrapper fade-in">
+    <div class="verify-card">
+      <h1>Agent Verification</h1>
+      <p>Check if a Telegram username is an official BOC partner.</p>
+      <div class="verify-form">
+        <input type="text" id="username" placeholder="@username" class="input"/>
+        <button class="btn btn-verify" onclick="verifyAgent()">Verify</button>
+      </div>
+      <p id="result" class="verify-result"></p>
+      <p class="note">⚠ Verified agents are <strong>partners only</strong> and must not be paid directly.</p>
+      <a href="index.html" class="btn-outline">← Back to Home</a>
+    </div>
+  </div>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script>
+    particlesJS.load('particles-js', 'particles.json');
+  </script>
+</body>
+</html>

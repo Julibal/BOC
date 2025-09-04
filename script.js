@@ -152,25 +152,56 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('resize', () => { resize(); initParticles(); });
   }
 });
-async function loadAgents() {
-  const response = await fetch("agents.json");
-  const data = await response.json();
-  return data.verifiedAgents;
+
+
+// Verification logic
+async function verifyAgent() {
+  const input = document.getElementById('username');
+  const result = document.getElementById('result');
+  if(!input || !result) return;
+  const username = input.value.trim().replace(/^@/, '').toLowerCase();
+  try {
+    const resp = await fetch('agents.json', {cache: 'no-store'});
+    const data = await resp.json();
+    const list = Array.isArray(data?.verifiedAgents) ? data.verifiedAgents : [];
+    const normalized = list.map(x => String(x).trim().replace(/^@/, '').toLowerCase());
+    if(normalized.includes(username)){
+      result.innerHTML = "✅ This is a <strong>verified agent of BOC</strong>.<br><small>They are partners only and should not be paid directly.</small>";
+      result.style.color = "green";
+    } else {
+      result.innerHTML = "❌ This username is NOT a verified agent of BOC.";
+      result.style.color = "red";
+    }
+  } catch(e){
+    result.textContent = "Error loading verification data.";
+    result.style.color = "red";
+  }
 }
 
-async function verifyAgent() {
-  const input = document.getElementById("usernameInput").value.trim().replace(/^@/, "");
-  const result = document.getElementById("verificationResult");
-  const verifiedAgents = await loadAgents();
 
-  // Normalize (remove @ from both sides for comparison)
-  const normalizedAgents = verifiedAgents.map(a => a.replace(/^@/, ""));
-  
-  if (normalizedAgents.includes(input)) {
-    result.textContent = "✅ Verified: This is an official BOC partner agent.";
-    result.style.color = "green";
-  } else {
-    result.textContent = "❌ Not Verified: This username is not in our partner list.";
+// Verification logic with fade-in result
+async function verifyAgent() {
+  const input = document.getElementById('username');
+  const result = document.getElementById('result');
+  if(!input || !result) return;
+  const username = input.value.trim().replace(/^@/, '').toLowerCase();
+  try {
+    const resp = await fetch('agents.json', {cache: 'no-store'});
+    const data = await resp.json();
+    const list = Array.isArray(data?.verifiedAgents) ? data.verifiedAgents : [];
+    const normalized = list.map(x => String(x).trim().replace(/^@/, '').toLowerCase());
+    result.classList.remove("show");
+    if(normalized.includes(username)){
+      result.innerHTML = "✅ This is a <strong>verified agent of BOC</strong>.<br><small>They are partners only and should not be paid directly.</small>";
+      result.style.color = "lime";
+    } else {
+      result.innerHTML = "❌ This username is NOT a verified agent of BOC.";
+      result.style.color = "red";
+    }
+    setTimeout(()=> result.classList.add("show"), 50);
+  } catch(e){
+    result.textContent = "Error loading verification data.";
     result.style.color = "red";
+    setTimeout(()=> result.classList.add("show"), 50);
   }
 }
